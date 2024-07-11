@@ -1,18 +1,12 @@
 import "./App.css";
 import ItemList from "./Components/ItemList";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./Components/Navbar";
+import BookData from "./Data.json";
 
 function App() {
   return (
     <div>
-      <Router>
-        <Navbar></Navbar>
-        <Routes>
-          <Route path="/ItemList" element={<ItemList />} />
-        </Routes>
-      </Router>
-      <ItemList></ItemList>
+      
+      <ItemList adat={BookData}></ItemList>
     </div>
   );
 }

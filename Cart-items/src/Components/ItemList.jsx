@@ -1,20 +1,15 @@
-import pizza from "../../public/pizza1.jpg";
-import Cart from "./Cart";
+/* eslint-disable react/prop-types */
 
-const ItemList = () => {
-  let adat = [
-    {
-      id: 1,
-      name: "pizza",
-      price: 100,
-      img: pizza,
-    },
-  ];
-
+const ItemList = ({ adat }) => {
+  console.log("h", adat);
   return (
     <div>
-      <Cart adat={adat}></Cart>
-      szia
+      {adat.map((value) => {
+        <p style={{ color: "black", fontSize: "30px" }} >
+          <p>{value.author}</p>
+          <p></p>
+        </p>;
+      })}
     </div>
   );
 };
