@@ -1,14 +1,18 @@
-import "./App.css";
-import ItemList from "./Components/ItemList";
-import BookData from "./Data.json";
+import React from "react";
+import SearcBar from "./Components/SearcBar";
+//import BookList from "./Components/BookList";
+import data from "./Data.json";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      
-      <ItemList adat={BookData}></ItemList>
+    <div className="App">
+      <SearcBar placeholder={"Enter a Book name..."} data={data} />
+
+      {/* <p>
+        <BookList />
+      </p> */}
     </div>
   );
-}
+};
 
 export default App;
