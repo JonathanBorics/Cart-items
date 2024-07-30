@@ -51,6 +51,36 @@ input:focus {
   align-items: center;
   color: black;
 }
+.data {
+  text-align: center;
+}
+.data:hover {
+  background-image: linear-gradient(90deg, #310058, #8820dd);
+}
+#title {
+  font-size: 21px;
+}
+.dataResults {
+  margin-top: 5px;
+  width: 380px;
+  height: 400px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dataResults::-webkit-scrollbar {
+  display: none;
+}
+
+.dataResults .dataItem {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: black;
+}
 
 .dataItem p {
   margin-left: 10px;
@@ -60,7 +90,7 @@ a {
 }
 
 a:hover {
-  background-color: lightgrey;
+  background-image: linear-gradient(90deg, #6600b9, #6400b7);
 }
 
 #clearBtn {
@@ -78,4 +108,43 @@ a:hover {
 body {
   padding: 0;
   margin: 0;
+}
+
+/* index.css or App.css */
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  display: inline;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }

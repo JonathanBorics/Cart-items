@@ -1,28 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
-function SearcBar({ placeholder, data }) {
-  const [filteredData, setFilteredData] = useState([]);
+import { useState } from "react";
+export default function About({ placeholder, adat }) {
+  const [filterdata, setFilterData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
-    const newFilter = data.filter((value) => {
+    const filtered = adat.filter((value) => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
     if (searchWord === "") {
-      setFilteredData([]);
+      setFilterData([]);
     } else {
-      setFilteredData(newFilter);
+      setFilterData(filtered);
     }
   };
 
   const clearInput = () => {
-    setFilteredData([]);
+    setFilterData([]);
     setWordEntered("");
   };
-
   return (
     <div className="search">
       <div className="searchInputs">
@@ -34,23 +34,25 @@ function SearcBar({ placeholder, data }) {
           onChange={handleFilter}
         />
         <div className="searchIcon">
-          {filteredData.length === 0 ? (
+          {filterdata.length === 0 ? (
             <SearchIcon />
           ) : (
             <CloseIcon id="clearBtn" onClick={clearInput} />
           )}
         </div>
       </div>
-
-      {filteredData.length != 0 && (
-        <div className="dataResult">
-          {filteredData.slice(0, 15).map((value, key) => {
+      {filterdata.length != 0 && (
+        <div className="dataResults">
+          {filterdata.slice(0, 15).map((value, key) => {
             return (
-              <>
+              <div className="data">
                 <a className="dataItem" href={value.link} target="_blank">
-                  <p> {value.title}</p>
+                  <p id="title"> {value.title}</p>
                 </a>
-              </>
+                <p>Author:{value.authoc}</p>
+                <p>Country:{value.country}</p>
+                <p>Year:{value.year}</p>
+              </div>
             );
           })}
         </div>
@@ -58,5 +60,3 @@ function SearcBar({ placeholder, data }) {
     </div>
   );
 }
-
-export default SearcBar;
